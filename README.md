@@ -25,11 +25,15 @@ http://DeineDomain.borg/wp-admin
 Name: admin  
 Passwort: admin
 
+## Vorraussetzungen
+- mySQL
+- php-zip
+
 #### 1.) Backup kopieren
 Einfach das Backupfile `20161202_freifunkfunk_basic_setup_584163f4bc89e6402161202120716_archive.zip` und die `installer.php` auf dem Webspace ins htdoc-Root (oder einem Unterverzeichnis) einspielen.
 
 #### 2.) Installer aufrufen
-http://www.freifunk-DummyTown.de/installer.php starten. Der Rest geht via dem Wizard Dialog. mySQL muss installiert sein. Die DB wird vom Installer angelegt. Ihr braucht Name und Passwort für den mySQL User. Der Wizard kann bei entsprechender Berechtigung auch eine neue DB anlegen.
+http://www.freifunk-DummyTown.de/installer.php starten. Der Rest geht via dem Wizard Dialog. MySQL muss installiert sein. Die DB wird vom Installer angelegt. Ihr braucht Name und Passwort für den mySQL User. Der Wizard kann bei entsprechender Berechtigung auch eine neue DB anlegen.
 
 #### 3.) Admin-User Passwort ÄNDERN!
 
