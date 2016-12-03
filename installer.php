@@ -1494,6 +1494,9 @@ if ($_POST['dbnbsp']) {
 	$sql_file = preg_replace('/\xC2\xA0/', ' ', $sql_file);
 }
 
+//allow empty default dates '000-00-00 00:00:00'
+$sql_file="SET SQL_MODE='ALLOW_INVALID_DATES';\n".$sql_file;
+
 //Write new contents to install-data.sql
 @chmod($sql_result_file_path, 0777);
 file_put_contents($GLOBALS['SQL_FILE_NAME'], $sql_file);
@@ -2132,7 +2135,7 @@ die(json_encode($JSON));
 
 	/* ============================
 	STEP 3 VIEW */
-	div.s3-final-title {color:#BE2323;}
+	div.s3-final-title {color:green;}
 	div.s3-connect {font-size:12px; text-align:center; font-style:italic; position:absolute; bottom:10px; padding:10px; width:100%; margin-top:20px}
 	table.s3-report-results,
 	table.s3-report-errs {border-collapse:collapse; border:1px solid #dfdfdf; }
@@ -2775,10 +2778,10 @@ VIEW: STEP 1- INPUT -->
     	</table>
 		
 		
-		<!-- =========================================
+		<!-- =================== DISABLED, because this already installs everything!
 		DIALOG: DB CONNECTION CHECK  -->
 		<div id="s1-dbconn">
-			<input type="button" onclick="Duplicator.dlgTestDB()" class="s1-small-btn" value="Test Connection" />
+			<input style="display:none" type="button" onclick="Duplicator.dlgTestDB()" class="s1-small-btn" value="Test Connection" />
 			<div id="s1-dbconn-status" style="display:none">
 				<div style="padding: 0px 10px 10px 10px;">		
 					<div id="dbconn-test-msg" style="min-height:80px"></div>
